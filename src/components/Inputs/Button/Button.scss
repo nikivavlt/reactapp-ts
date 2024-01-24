@@ -1,0 +1,60 @@
+@import '../../../assets/styles/colors.scss';
+@import '../../../assets/styles/mixins.scss';
+
+.g-components__button {
+    width: 100%;
+    height: 77px;
+
+    @include fl-c;
+
+    background: $clr-yellow-primary;
+    border-radius: 16px;
+
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 25px;
+
+    text-align: center;
+
+    color: #0d0d13;
+
+    &_unactive {
+        opacity: 0.3;
+
+        color: #ffc952;
+        background: $clr-brown !important;
+
+        &:hover {
+            background: $clr-brown !important;
+        }
+    }
+
+    &_yellow {
+        // background: $clr-yellow-primary;
+        border: 1px solid var(--dashboard-stroke, rgba(255, 250, 239, 0.04));
+        background: var(--yellow, #ffc952);
+
+        &:hover {
+            // background: $clr-yellow-primary-active;
+            background: var(--yellow, #fabf3f);
+        }
+    }
+    &_brown {
+        // background: $clr-brown;
+
+        // color: #ffc952;
+
+        color: #fff;
+        border: 1px solid var(--dashboard-stroke, rgba(255, 250, 239, 0.04));
+        background: var(--dashboard-stroke, rgba(255, 250, 239, 0.04));
+
+        &:hover {
+            // background: $clr-brown-active;
+            background: var(--dashboard-stroke, rgba(255, 250, 239, 0.06));
+        }
+    }
+
+    transition: 120ms all;
+}

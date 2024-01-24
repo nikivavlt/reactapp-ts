@@ -1,0 +1,41 @@
+@font-face {
+    font-family: 'Actay';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Actay'), url('./Actay-Regular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Actay Italic';
+    font-style: italic;
+    font-weight: normal;
+    src: local('Actay Italic'), url('./Actay-RegularItalic.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Actay Condensed Thin';
+    font-style: normal;
+    font-weight: 100;
+    src: local('Actay Condensed Thin'), url('./ActayCondensed-Thin.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Actay Condensed Thin Italic';
+    font-style: italic;
+    font-weight: 100;
+    src: local('Actay Condensed Thin Italic'), url('./ActayCondensed-ThinItalic.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Actay Wide Bold';
+    font-style: normal;
+    font-weight: bold;
+    src: local('Actay Wide Bold'), url('./ActayWide-Bold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Actay Wide Bold Italic';
+    font-style: italic;
+    font-weight: bold;
+    src: local('Actay Wide Bold Italic'), url('./ActayWide-BoldItalic.otf') format('opentype');
+}

@@ -1,0 +1,64 @@
+@import '../../../assets/styles/colors.scss';
+
+.g-components__input-text {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	padding: 23px 30px 25px;
+	gap: 30px;
+
+	width: 410px;
+	height: 75px;
+
+	/* newColors/dark */
+
+	background: $clr-brown-dark;
+	border: 1px solid rgba(255, 250, 239, 0.05);
+	border-radius: 16px;
+
+	/* Inside auto layout */
+
+	display: flex;
+	justify-content: space-between;
+
+	&_active {
+		background: $clr-brown-active;
+	}
+
+	&__input {
+		width: max-content;
+		height: 27px;
+
+		background-color: transparent;
+		border: none;
+		outline: none;
+
+		font-family: 'Manrope';
+		font-style: normal;
+		font-weight: 500;
+		font-size: 20px;
+		line-height: 27px;
+
+		color: #fffaef;
+
+		opacity: 1;
+
+		&::placeholder {
+			opacity: 0.5;
+		}
+		&::-ms-reveal,
+		&::-ms-clear {
+			display: none;
+		}
+	}
+
+	&__icons {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+
+		& > :nth-child(n + 2) {
+			margin-left: 30px;
+		}
+	}
+}

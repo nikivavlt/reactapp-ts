@@ -1,0 +1,59 @@
+.App {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media (max-width: 3840px) {
+    .zoom {
+        zoom: 200%;
+    }
+}
+
+@media (max-width: 2560px) {
+    .zoom {
+        zoom: 133.3%;
+    }
+}
+
+@media (max-width: 1920px) {
+    .zoom {
+        zoom: 100%;
+    }
+}
+
+@media (max-width: 1366px) {
+    .zoom {
+        zoom: 71.15%;
+    }
+}
+
+@media (width: 1280px) {
+    .zoom {
+        zoom: 66.68%;
+    }
+}
+
+@media (width: 1280px) and (height: 1024px) {
+    .zoom {
+        zoom: 94.8%;
+    }
+}
+
+@media (width: 1600px) and (height: 900px) {
+    .zoom {
+        zoom: 80%;
+    }
+}
+
+@media (width: 800px) and (height: 600px) {
+    .zoom {
+        zoom: 55.5%;
+    }
+}

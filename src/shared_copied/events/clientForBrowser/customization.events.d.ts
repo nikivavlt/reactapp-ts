@@ -1,0 +1,42 @@
+interface ICustomizationEvents_CFB {
+    'CFB::customization.main.changeGender': (gender: boolean) => any;
+    'CFB::customization.genetic.changeMother': (id: number) => any;
+    'CFB::customization.genetic.changeFather': (id: number) => any;
+    'CFB::customization.genetic.changeShapeMix': (val: number) => any;
+    'CFB::customization.genetic.changeSkinMix': (val: number) => any;
+    'CFB::customization.apperance.changeHairStyle': (id: number) => any;
+    'CFB::customization.apperance.changeHairColor': (id: number) => any;
+    'CFB::customization.apperance.changeHilightColor': (id: number) => any;
+    'CFB::customization.apperance.changeEyeBrows': (id: number) => any;
+    'CFB::customization.apperance.changeEyeBrowsColor': (id: number) => any;
+    'CFB::customization.apperance.changeEyeColor': (id: number) => any;
+    'CFB::customization.apperance.browHeight': (val: number) => any;
+    'CFB::customization.apperance.browWidth': (val: number) => any;
+    'CFB::customization.apperance.eyes': (val: number) => any;
+    'CFB::customization.apperance.noseWidth': (val: number) => any;
+    'CFB::customization.apperance.noseHeight': (val: number) => any;
+    'CFB::customization.apperance.noseLength': (val: number) => any;
+    'CFB::customization.apperance.noseBridge': (val: number) => any;
+    'CFB::customization.apperance.noseTip': (val: number) => any;
+    'CFB::customization.apperance.cheekboneHeight': (val: number) => any;
+    'CFB::customization.apperance.cheekboneWidth': (val: number) => any;
+    'CFB::customization.apperance.cheeksWidth': (val: number) => any;
+    'CFB::customization.apperance.lips': (val: number) => any;
+    'CFB::customization.apperance.jawWidth': (val: number) => any;
+    'CFB::customization.apperance.jawHeight': (val: number) => any;
+    'CFB::customization.apperance.chinLength': (val: number) => any;
+    'CFB::customization.apperance.chinPosition': (val: number) => any;
+    'CFB::customization.apperance.chinWidth': (val: number) => any;
+    'CFB::customization.apperance.chinShape': (val: number) => any;
+    'CFB::customization.apperance.neckWidth': (val: number) => any;
+    // Types.Customization.IHeadOverlayItem
+    'CFB::customization.peculiarities.changeBelmishes': (data: string) => any;
+    'CFB::customization.peculiarities.changeMolesFrecles': (data: string) => any;
+    'CFB::customization.peculiarities.change': (data: string) => any;
+    'CFB::customization.clothes.select.hat': (id: string) => any;
+    'CFB::customization.clothes.select.top': (id: string) => any;
+    'CFB::customization.clothes.select.legs': (id: string) => any;
+    'CFB::customization.clothes.select.shoes': (id: string) => any;
+    'CFB::customization.special.randomize.category': (category: Types.Customization.Category) => any;
+    'CFB::customization.special.randomize.all': () => any;
+}

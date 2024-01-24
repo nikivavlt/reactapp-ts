@@ -1,0 +1,285 @@
+@import './fonts.scss';
+@import './flex.scss';
+
+#root,
+body {
+    width: 100vw;
+    height: 100vh;
+
+    overflow: hidden;
+    overflow-y: hidden !important;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+        'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+* {
+    outline: none;
+    box-sizing: border-box;
+
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+
+    background-size: cover;
+}
+
+* {
+    transition: 120ms all;
+}
+
+button {
+    border: none;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+ul[class],
+ol[class] {
+    padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+body {
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+
+ul[class],
+ol[class] {
+    list-style: none;
+}
+
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    pointer-events: none;
+    image-rendering: crisp-edges;
+}
+
+article > * + * {
+    margin-top: 1em;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+* [draggable='true'] {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/*
+	Extra-Wide
+		2560x1080
+		3440x1440
+		3840x1600
+		5120x2160
+		5120x2880
+*/
+
+@media (width: 2560px) and (height: 1080px) {
+    .zoom {
+        zoom: 100% !important;
+    }
+}
+@media (width: 3440px) and (height: 1440px) {
+    .zoom {
+        zoom: 135% !important;
+    }
+}
+@media (width: 3840px) and (height: 1600px) {
+    .zoom {
+        zoom: 150% !important;
+    }
+}
+@media (width: 5120px) and (height: 2160px) {
+    .zoom {
+        zoom: 200% !important;
+    }
+}
+@media (width: 5120px) and (height: 2880px) {
+    .zoom {
+        zoom: 270% !important;
+    }
+}
+
+@media (max-width: 7680px) {
+    .zoom {
+        zoom: 450%;
+    }
+}
+
+@media (max-width: 6400px) {
+    .zoom {
+        zoom: 385%;
+    }
+}
+
+@media (max-width: 5120px) {
+    .zoom {
+        zoom: 300%;
+    }
+}
+
+@media (width: 4096px) and (height: 3072px) {
+    .zoom {
+        zoom: 284% !important;
+    }
+}
+@media (max-width: 4096px) {
+    .zoom {
+        zoom: 200%;
+    }
+}
+
+@media (width: 3840px) and (height: 2400px) {
+    .zoom {
+        zoom: 222% !important;
+    }
+}
+@media (max-width: 3840px) {
+    .zoom {
+        zoom: 202%;
+    }
+}
+
+@media (max-width: 3440px) {
+    .zoom {
+        zoom: 160%;
+    }
+}
+
+@media (width: 2560px) and (height: 1600px) {
+    .zoom {
+        zoom: 149% !important;
+    }
+}
+@media (max-width: 2560px) {
+    .zoom {
+        zoom: 133.33%;
+    }
+}
+
+@media (max-width: 2048px) {
+    .zoom {
+        zoom: 142%;
+    }
+}
+
+@media (width: 1920px) and (height: 1200px) {
+    .zoom {
+        zoom: 111% !important;
+    }
+}
+
+@media (max-width: 1920px) {
+    .zoom {
+        zoom: 100%;
+    }
+}
+
+@media (max-width: 1680px) {
+    .zoom {
+        zoom: 97%;
+    }
+}
+
+@media (width: 1600px) and (height: 900px) {
+    .zoom {
+        zoom: 82% !important;
+    }
+}
+
+@media (max-width: 1600px) {
+    .zoom {
+        zoom: 110%;
+    }
+}
+
+@media (max-width: 1440px) {
+    .zoom {
+        zoom: 83%;
+    }
+}
+
+@media (max-width: 1366px) {
+    .zoom {
+        zoom: 71.43%;
+    }
+}
+
+@media (width: 1280px) and (height: 800px) {
+    .zoom {
+        zoom: 74% !important;
+    }
+}
+
+@media (max-width: 1280px) {
+    .zoom {
+        zoom: 95%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .zoom {
+        zoom: 71%;
+    }
+}
+
+@media (max-width: 800px) {
+    .zoom {
+        zoom: 41.67%;
+    }
+}

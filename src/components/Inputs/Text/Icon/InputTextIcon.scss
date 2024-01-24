@@ -1,0 +1,8 @@
+@import '../../../../assets/styles/mixins.scss';
+
+.g-components__input-text-icon {
+	width: 24px;
+	height: 24px;
+
+	@include fl-c;
+}
