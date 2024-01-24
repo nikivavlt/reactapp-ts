@@ -10,6 +10,7 @@ import { API } from './api/api';
 import { trigger } from './utils';
 
 import './assets/styles/App.scss';
+import Customization from './modules/Customization/Customization';
 
 function isElementDescendant(childElement: Element, parentElement: Element) {
     if (childElement === parentElement) {
@@ -153,7 +154,8 @@ export const App = observer(() => {
 
     return (
         <div className="App" ref={appRef}>
-            {store.bank.active && <Bank />}
+            <Customization></Customization>
+            {/* {store.bank.active && <Bank />} */}
         </div>
     );
 });
