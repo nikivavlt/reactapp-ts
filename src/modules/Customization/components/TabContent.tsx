@@ -2,12 +2,12 @@ import React from "react";
  
 const TabContent = ({id, activeTab, children}) => {
  return (
-   (activeTab === id ) && <div>{ children }</div>
+   (activeTab === id) && <div>{ children }</div>
  );
 };
 
 TabContent.defaultProps = {
-    id: 'information',
-}
+    id: 1,
+};
 
 export default TabContent;

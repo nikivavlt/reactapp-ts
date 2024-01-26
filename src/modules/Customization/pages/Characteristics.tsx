@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
 
 const Characteristics = () => {
   return (
     <div>Characteristics</div>
-  )
-}
+  );
+};
 
-export default Characteristics
+export default Characteristics;

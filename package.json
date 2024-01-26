@@ -47,7 +47,9 @@
 		"rules": {
 			"jsx-a11y/alt-text": "off",
 			"jsx-a11y/heading-has-content": "off",
-			"no-useless-escape": "off"
+			"no-useless-escape": "off",
+			"@typescript-eslint/semi": "off",
+			"semi": ["error", "always"]
 		}
 	},
 	"browserslist": {
