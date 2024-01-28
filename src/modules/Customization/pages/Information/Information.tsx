@@ -1,25 +1,14 @@
 import React, { useState } from 'react';
+import customization from '@/store/customization.store';
 
-interface IProps {
-  formRef: HTMLFormElement;
-  setErrorMessage: (message: string) => void;
-}
+const customizationStore = customization;
 
-const defaultGender = 'male';
-const defaultFieldLength = 16;
 const regexPattern = new RegExp(/^[a-zA-Z]+$/);
+
 const minimumAge = 18;
 const maximumAge = 99;
 
-const Information = ({ formRef, setErrorMessage }: IProps) => {
-  const [userData, setUserData] = useState(
-    { name: '', 
-      surname: '', 
-      gender: defaultGender, 
-      birthdayDate: ''
-    }
-  );
-
+const Information = () => {
   const [birthdayErrorMessage, setBirthdayErrorMessage] = useState('');
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -28,7 +17,8 @@ const Information = ({ formRef, setErrorMessage }: IProps) => {
 
     if (fieldKey === 'name' || fieldKey === 'surname') {
       if (!regexPattern.test(fieldValue)) {
-        setUserData({ ...userData, [fieldValue]: ''});
+        if (fieldKey === 'name') event.target.value = customizationStore.getStoreData().name;
+        if (fieldKey === 'surname') event.target.value = customizationStore.getStoreData().surname;
         return;
       }
     }
@@ -49,36 +39,39 @@ const Information = ({ formRef, setErrorMessage }: IProps) => {
       else if (age > maximumAge) {
         setBirthdayErrorMessage('Максимальный возраст 99 лет');
         return;
+      } else {
+        setBirthdayErrorMessage('');
       }
     }
-    setBirthdayErrorMessage('');
 
-    setUserData({ ...userData, [fieldKey]: fieldValue });
-  };
-
-  const handleSubmit = (event: SubmitEvent) => {
-    event.preventDefault();
-
-    if (userData.name === '' || userData.surname === '' || userData.birthdayDate === ''
-        || userData.name.length > defaultFieldLength || userData.surname.length > defaultFieldLength) 
-    {
-      setErrorMessage('«Заполните вкладку "«Информация»');
-    } else {
-      setErrorMessage('');
-      console.log(userData);
+    switch (fieldKey) {
+      case 'name':
+        customizationStore.setName(event.target.value);
+        break;
+      case 'surname':
+        customizationStore.setSurname(event.target.value);
+        break;
+      case 'gender':
+        customizationStore.setGender(event.target.value);
+        break;
+      case 'birthdayDate':
+        customizationStore.setBirthdayDate(event.target.value);
+        break;
+      default:
+        break;
     }
   };
 
   return (
-    <form onSubmit={handleSubmit} ref={formRef} >
+    <form>
       <label htmlFor="name">
         Имя:
-        <input type="text" id="name" placeholder="Имя" value={userData.name}
+        <input type="text" id="name" placeholder="Имя"
           onChange={(event) => handleChange(event)} />
       </label>
       <label htmlFor="surname">
         Фамилия:
-        <input type="text" id="surname" placeholder="Фамилия" value={userData.surname}
+        <input type="text" id="surname" placeholder="Фамилия"
           onChange={(event) => handleChange(event)} />
       </label>
       <label htmlFor="gender">
@@ -86,15 +79,18 @@ const Information = ({ formRef, setErrorMessage }: IProps) => {
         <label htmlFor="male">
           Мужской
           <input type="radio" id="gender" value="male" 
-            onChange={(event) => handleChange(event)} checked={userData.gender === 'male'} />
+            onChange={(event) => handleChange(event)} 
+            checked={customizationStore.getStoreData().gender === 'male'} />
         </label>
         <label htmlFor="female">
           Женский
           <input type="radio" id="gender" value="female" 
-            onChange={(event) => handleChange(event)} checked={userData.gender === 'female'} />
+            onChange={(event) => handleChange(event)} 
+            checked={customizationStore.getStoreData().gender === 'female'} />
         </label>
       </label>
-      <input type="date" id="birthdayDate" onChange={(event) => handleChange(event)} />
+      <input type="date" id="birthdayDate" 
+        onChange={(event) => handleChange(event)} />
       <p>{ birthdayErrorMessage && birthdayErrorMessage}</p>
     </form>
   );
