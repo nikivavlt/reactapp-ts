@@ -7,7 +7,13 @@ class Customization {
     name: '',
     surname: '',
     gender: defaultGender,
-    birthdayDate: ''
+    birthdayDate: '',
+    clothes: {
+      hat: 0,
+      torso: 1,
+      legs: 1,
+      shoes: 1,
+    }
    };
 
   constructor() {
@@ -32,6 +38,22 @@ class Customization {
 
   setBirthdayDate(birthdayDate: string) {
     this.data.birthdayDate = birthdayDate;
+  }
+
+  setHat(hat: number) {
+    this.data.clothes.hat = hat;
+  }
+
+  setTorso(torso: number) {
+    this.data.clothes.torso = torso;
+  }
+
+  setLegs(legs: number) {
+    this.data.clothes.legs = legs;
+  }
+
+  setShoes(shoes: number) {
+    this.data.clothes.shoes = shoes;
   }
 }
 

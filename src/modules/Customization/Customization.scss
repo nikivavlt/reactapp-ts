@@ -1,0 +1,348 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;600&display=swap');
+
+.customization {
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 4rem;
+    margin-left: 4rem;
+
+    height: 100%;
+
+    .clothes-grid {
+        margin-top: 2rem;
+        margin-left: 2.2rem;
+
+        width: 485px;
+        height: 736px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+
+        li {
+            width: 228px;
+            height: 228px;
+
+            background-color: #240600;
+
+            border: 1px solid #FFFAEF0D;
+            border-radius: 6px;
+        }
+    }
+
+    #active-element {
+        border: 2px solid #FFC952;
+    }
+
+    .tabs {
+        padding-top: 1.5rem;
+
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+
+        font-family: 'Montserrat';
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 31.2px;
+
+        &::before {
+            content: 'A';
+            width: 31px;
+            height: 33px;
+            font-family: 'Manrope';
+            font-size: 18px;
+            font-weight: 600;
+            text-align: center;
+            color: #FFFFFF;
+            background-color: #240600;
+            border: 1px solid #240600;
+            border-radius: 6px;
+        }
+    
+        &::after {
+            content: 'D';
+            width: 31px;
+            height: 33px;
+            font-family: 'Manrope';
+            font-size: 18px;
+            font-weight: 600;
+            text-align: center;
+            color: #FFFFFF;
+            background-color: #240600;
+            border: 1px solid #240600;
+            border-radius: 6px;
+        }
+    }
+
+    .tab-title {
+        color: gray;
+    }
+
+    .active {
+        color: white;
+        padding-bottom: 1rem;
+        border-bottom: 2px solid #FFC952;
+    }
+    // background: linear-gradient(270deg, rgba(27, 8, 4, 0.8) 23.16%, rgba(27, 8, 4, 0) 116.15%),
+    // linear-gradient(236.31deg, rgba(255, 201, 82, 0.1) 6.06%, rgba(255, 161, 12, 0) 29.91%),
+    // url('../../assets/media/images/customization/shadow.png') no-repeat;
+
+    // background-size: cover;
+    // opacity: 0.3;
+
+    .background-noise,
+    .background-fire,
+    .background-el,
+    .background-shadow {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+    }
+
+    .background-noise {
+        opacity: 0.3;
+        background: url('../../assets/media/images/customization/noise.png'), lightgray 50% / cover no-repeat;
+        mix-blend-mode: soft-light;
+    }
+
+    .background-fire {
+        opacity: 0.3;
+        background: url('../../assets/media/images/customization/fire.png'), lightgray 50% / cover no-repeat;
+        mix-blend-mode: lighten;
+    }
+
+    .background-el {
+        opacity: 0.2;
+        background: url('../../assets/media/images/customization/el.png'), lightgray 50% / cover no-repeat;
+        mix-blend-mode: soft-light;
+    }
+
+    .background-shadow {
+        background: url('../../assets/media/images/customization/shadow.png'), lightgray 50% / cover no-repeat;
+    }
+}
+
+.header {
+    width: 40%;
+    display: flex;
+    gap: 2rem;
+
+    color: white;
+
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 41.6px;
+
+    &::before {
+        content: 'Q';
+        width: 31px;
+        height: 42px;
+        font-family: 'Manrope';
+        font-size: 18px;
+        font-weight: 600;
+        text-align: center;
+        color: #FFFFFF;
+        background-color: #240600;
+        border: 1px solid #240600;
+        border-radius: 6px;
+    }
+
+    &::after {
+        content: 'E';
+        width: 31px;
+        height: 42px;
+        font-family: 'Manrope';
+        font-size: 18px;
+        font-weight: 600;
+        text-align: center;
+        color: #FFFFFF;
+        background-color: #240600;
+        border: 1px solid #240600;
+        border-radius: 6px;
+    }
+}
+
+ul li {
+    list-style: none;
+}
+
+// Information component
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    font-family: 'Manrope';
+    font-size: 18px;
+    font-weight: 500;
+
+    margin: 3rem;
+
+    .input-fields {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .passport-icon {
+        position: absolute;
+        margin-left: 20rem;
+        padding: 1.8rem;
+        text-align: center;
+    }
+
+    #name, #surname {
+        width: 410px;
+        height: 73px;
+        padding: 23px 30px 25px 30px;
+        border: 1px solid #FFFAEF0D;
+        border-radius: 16px 16px 0px 0px;
+        background: #240600;
+    }
+
+    #name {
+        border-radius: 16px 16px 0px 0px;
+    }
+
+    #surname {
+        border-radius: 0px 0px 16px 16px;
+    }
+
+    .gender__title,
+    .birthday__title {
+        padding-bottom: 1rem;
+        font-weight: 600;
+        color: white;
+        line-height: 24.59px;
+    }
+
+    .gender__buttons {
+        display: flex;
+        gap: 1.3rem;
+    }
+
+    .gender-male,
+    .gender-female {
+        display: inline-block;
+        width: 195px;
+        height: 55px;
+        background-color: #240600;
+        border: 1px solid #FFFAEF0D;
+        border-radius: 12px;
+
+        color: white;
+        padding: 14px 30px 16px 30px;
+    }
+
+    #birthdayDate {
+        width: 410px;
+        height: 73px;
+
+        color: white;
+        background-color: #240600;
+        border: 1px solid #FFFAEF0D;
+        border-radius: 16px;
+
+        padding: 23px 30px 25px 30px;
+    }
+
+    input[type="date"]::-webkit-calendar-picker-indicator {
+        color: rgba(0, 0, 0, 0);
+        opacity: 1;
+        background-image: url("../../assets/media/images/customization/icons/date.svg");
+        background-repeat: no-repeat;
+        background-position: 100% center;
+        background-size: 20px;
+        cursor: pointer;
+    }
+
+    input[type="radio"]{
+        visibility: hidden;
+    }
+    
+    .radio-image {
+        background-image: url("../../assets/media/images/customization/icons/checks-2.svg");
+        height: 20px;
+        width: 20px;
+    }
+
+    .radio-image {
+        position: relative;
+        left: 7.5rem;
+        bottom: 1.6rem;
+    }
+
+    input[type="radio"]:checked + .radio-image {
+        background-image: url("../../assets/media/images/customization/icons/checks.svg");
+    }
+
+    .birthday__error {
+        padding-top: 1rem;
+        padding-left: 2rem;
+        color: #FF453A;
+        line-height: 24.59px;
+        font-size: 18px;
+        font-weight: 600;
+    }
+}
+
+
+// Submit button
+.button-section {
+    position: fixed;
+    left: 50%;
+    bottom: 20px;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+    
+    margin-top: 16rem;
+    margin-bottom: 4rem;
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 354px;
+        height: 69px;
+
+        background-color: #1B0804;
+        color: white;
+
+        font-family: 'Manrope';
+        font-weight: 500;
+        font-size: 18px;
+
+        border: 1px solid #FFFAEF0A;
+        border-radius: 16px;
+
+        box-shadow: 0px 20px 50px 0px #0000001A;
+
+        margin-bottom: 1rem;
+    }
+
+    button {
+        font-family: 'Manrope';
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 24.59px;
+
+        color: white;
+        width: 410px;
+        height: 77px;
+        background: none;
+        border-radius: 16px;
+        border: 2px solid #FF9B00;
+    }
+}

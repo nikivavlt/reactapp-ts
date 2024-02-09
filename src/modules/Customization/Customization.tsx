@@ -14,14 +14,20 @@ const Customization = () => {
   };
 
   return (
-    <>
+    <div className='customization'>
+      <div className='background-noise'></div>
+      <div className='background-fire'></div>
+      <div className='background-el'></div>
+      <div className='background-shadow'></div>
       <Header activeTab={activeTab} setActiveTab={setActiveTab}/>
 
       <Content activeTab={activeTab} />
-  
-      <p>{ errorMessage && errorMessage }</p>
-      <button onClick={handleClick}>Создать персонажа</button>
-    </>
+
+      <section className='button-section'>
+        { errorMessage && <div> { errorMessage } </div> }
+        <button onClick={handleClick}>Создать персонажа</button>
+      </section>
+    </div>
   );
 };
 

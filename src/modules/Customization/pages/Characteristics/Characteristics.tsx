@@ -29,7 +29,7 @@ const Characteristics = () => {
 
   return (
     <>
-      <ul>
+      <ul className='tabs'>
           <TabTitle id={1} title="Генетика" activeTab={activeTab} setActiveTab={setActiveTab} />
           <TabTitle id={2} title="Внешний вид" activeTab={activeTab} setActiveTab={setActiveTab} />
           <TabTitle id={3} title="Особенности" activeTab={activeTab} setActiveTab={setActiveTab} />

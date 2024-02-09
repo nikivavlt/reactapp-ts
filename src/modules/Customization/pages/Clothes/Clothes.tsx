@@ -4,7 +4,7 @@ import TabContent from '../../components/TabContent';
 import Headdress from './Tabs/Headdress';
 import Torso from './Tabs/Torso';
 import Legs from './Tabs/Legs';
-import Footwear from './Tabs/Footwear';
+import Footwear from './Tabs/Shoes';
 
 const Clothes = () => {
   const [activeTab, setActiveTab] = useState(1);
@@ -30,7 +30,7 @@ const Clothes = () => {
 
   return (
     <>
-      <ul>
+      <ul className='tabs'>
           <TabTitle id={1} title="Головной убор" activeTab={activeTab} setActiveTab={setActiveTab} />
           <TabTitle id={2} title="Торс" activeTab={activeTab} setActiveTab={setActiveTab} />
           <TabTitle id={3} title="Ноги" activeTab={activeTab} setActiveTab={setActiveTab} />

@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import TabTitle from './TabTitle';
+import '../Customization.scss';
 
 interface IProps {
   activeTab: number;
@@ -40,7 +41,7 @@ const Header = ({ activeTab, setActiveTab }: IProps) => {
   }, [activeTab]);
 
   return (
-    <ul>
+    <ul className='header'>
       <TabTitle id={1} title='Информация' activeTab={activeTab} setActiveTab={setActiveTab}/>
       <TabTitle id={2} title='Характеристики' activeTab={activeTab} setActiveTab={setActiveTab}/>
       <TabTitle id={3} title='Одежда' activeTab={activeTab} setActiveTab={setActiveTab}/>
