@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import '../../../Customization.scss';
 
 const maleParents = [
   { 'id': '00', 'name': 'Бенжамин'},
@@ -51,24 +52,38 @@ const femaleParents = [
 ];
 
 const Genetics = () => {
+  const [selectedMaleParent, setSelectedMaleParent] = useState('01');
+  const [selectedFemaleParent, setSelectedFemaleParent] = useState('21');
+
+  const handleClick = (event: React.MouseEvent) => {
+    const selectedId = event.target.getAttribute('data-id');
+    const parentGender = event.target.getAttribute('data-gender');
+
+    ( parentGender === 'male' )
+      ? setSelectedMaleParent(selectedId)
+      : setSelectedFemaleParent(selectedId);
+
+    // customization.setTorso(selectedId);
+  };
+
   return (
     <div>
-      <div>
-        Родители
-        <div style={{ display: "flex", overflow: "scroll" }}>
-          <ul>
+      <div className='parents-section'>
+        <p className='parents-title'>Родители</p>
+        <div className='parents'>
+          <ul className='parent-grid' style={{ direction:'rtl' }}>
             {maleParents.map((parent) => (
-            <li>
-              <img src={require(`../../../../../assets/media/images/customization/parents/male/${parent.id}.png`)} alt="Parent" />
-              {parent.name}
+            <li key={parent.id} onClick={handleClick} data-id={parent.id} data-gender={'male'}>
+              <img id={parent.id == selectedMaleParent ? 'active-element' : ''} src={require(`../../../../../assets/media/images/customization/parents/male/${parent.id}.png`)} alt="Parent" />
+              <p>{parent.name}</p>
             </li>
             ))}
           </ul>
-          <ul>
+          <ul className='parent-grid'>
             {femaleParents.map((parent) => (
-            <li>
-              <img src={require(`../../../../../assets/media/images/customization/parents/female/${parent.id}.png`)} alt="Parent" />
-              {parent.name}
+            <li key={parent.id} onClick={handleClick} data-id={parent.id} data-gender={'female'}>
+              <img id={parent.id == selectedFemaleParent ? 'active-element' : ''} src={require(`../../../../../assets/media/images/customization/parents/female/${parent.id}.png`)} alt="Parent" />
+              <p>{parent.name}</p>
             </li>
             ))}
           </ul>

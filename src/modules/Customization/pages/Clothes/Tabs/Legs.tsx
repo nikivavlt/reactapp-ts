@@ -12,12 +12,12 @@ const Legs = () => {
   const [selectedLegs, setSelectedLegs] = useState(isMale() ? 4 : 0);
 
   useEffect(() => {
-    setSelectedLegs(customizationStoreData.clothes.legs);
+    setSelectedLegs(isMale() ? 4 : 0);
   }, []);
 
   const handleClick = (event: React.MouseEvent) => {
     const selectedId = event.target.getAttribute('data-id');
-
+    console.log(selectedId)
     customization.setLegs(selectedId);
     setSelectedLegs(selectedId);
   };

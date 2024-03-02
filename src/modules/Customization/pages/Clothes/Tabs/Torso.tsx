@@ -12,7 +12,7 @@ const Torso = () => {
   const [selectedTorso, setSelectedTorso] = useState(isMale() ? 1 : 0);
 
   useEffect(() => {
-    setSelectedTorso(customizationStoreData.clothes.torso);
+    setSelectedTorso(isMale() ? 1 : 0);
   }, []);
 
   const handleClick = (event: React.MouseEvent) => {
@@ -39,7 +39,7 @@ const Torso = () => {
         <ul className='clothes-grid'>
           { femaleTorsoIds.map((torsoId) => {
             return (
-              <li onClick={handleClick} data-id={torsoId} key={torsoId} id={torsoId == selectedShoes ? 'active-element' : ''}>
+              <li onClick={handleClick} data-id={torsoId} key={torsoId} id={torsoId == selectedTorso ? 'active-element' : ''}>
                 <img src={require(`../../../../../assets/media/images/customization/tops/female/${torsoId}.png`)} alt="Torso" />
               </li>
             );

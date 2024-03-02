@@ -11,7 +11,7 @@ class Customization {
     clothes: {
       hat: 0,
       torso: 1,
-      legs: 1,
+      legs: 0,
       shoes: 1,
     }
    };

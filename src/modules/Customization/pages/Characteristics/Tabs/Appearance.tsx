@@ -1,7 +1,8 @@
+import React, { useState } from 'react';
 import customization from '@/store/customization.store';
-import React from 'react';
+import '../../../Customization.scss';
 
-const hairdsIds = 31;
+const hairsIds = 31;
 const colors = [
   { id: 0, hex: '#1c1f21' },
   { id: 1, hex: '#272a2c' },
@@ -72,44 +73,79 @@ const colors = [
 const customizationStoreData = customization.getStoreData();
 
 const Appearance = () => {
+  const [selectedMaleHair, setSelectedMaleHair] = useState(0);
+  const [selectedFemaleHair, setSelectedFemaleHair] = useState(0);
+  const [selectedHairColor, setSelectedHairColor] = useState(0);
+  const [selectedAdditionalHairColor, setSelectedAdditionalColor] = useState(0);
+
+  const handleClick = (event: React.MouseEvent) => {
+    const selectedId = event.target.getAttribute('data-id');
+    const hairGender = event.target.getAttribute('data-gender');
+    console.log(selectedId);
+
+    ( hairGender === 'male' )
+      ? setSelectedMaleHair(selectedId)
+      : setSelectedFemaleHair(selectedId);
+
+    // customization.setTorso(selectedId);
+  };
+
+  const handleColor = (event: React.MouseEvent) => {
+    const selectedColorId = event.target.getAttribute('data-id');
+    const selectedColorOrder = event.target.getAttribute('data-order');
+
+    if (selectedColorOrder === 'first') setSelectedHairColor(selectedColorId);
+    else if (selectedColorOrder === 'second') setSelectedAdditionalColor(selectedColorId);
+  };
+
+
   return (
     <div>
-      <div>
-        Прическа
-          <ul>
-          {Array.from(Array(hairdsIds), (_, i) => {
+      <div className='appearance-section'>
+        <p>Прическа</p>
+          <ul className='hairs-grid'>
+          {Array.from(Array(hairsIds), (_, i) => {
             if (customizationStoreData.gender === 'male') {
               if (i === 23) return null;
               return (
-              <li>
-                <img src={require(`../../../../../assets/media/images/customization/hairs/male/${i}.png`)} alt="Hair" />
+              <li key={i} onClick={handleClick} data-id={i} data-gender={'male'}>
+                <img id={i == selectedMaleHair ? 'active-element' : ''} src={require(`../../../../../assets/media/images/customization/hairs/male/${i}.png`)} alt="Hair" />
               </li>
               );
             }
             else if (customizationStoreData.gender === 'female') {
               if (i === 24) return null;
               return (
-              <li>
-                <img src={require(`../../../../../assets/media/images/customization/hairs/female/${i}.png`)} alt="Hair" />
+              <li key={i} onClick={handleClick} data-id={i} data-gender={'female'}>
+                <img id={i == selectedFemaleHair ? 'active-element' : ''} src={require(`../../../../../assets/media/images/customization/hairs/female/${i}.png`)} alt="Hair" />
               </li>
               );
             }
           })}
           </ul>
+          <p>Цвет волос</p>
+          <div className='bar-section'>
+            <ul className='bar'>
+              {colors.map((color) => {
+                return (
+                <li id={color.id == selectedHairColor ? 'active-element' : ''} className='bar-element' style={{ backgroundColor: `${color.hex}` }} onClick={handleColor} data-id={color.id} data-order={'first'}>
+                </li>
+                );
+              })}
+            </ul>
+          </div>
+          <p>Дополнительный цвет волос</p>
+          <div className='bar-section'>
+            <ul className='bar'>
+              {colors.map((color) => {
+                return (
+                <li id={color.id == selectedAdditionalHairColor ? 'active-element' : ''} className='bar-element' style={{ backgroundColor: `${color.hex}` }} onClick={handleColor} data-id={color.id} data-order={'second'}>
+                </li>
+                );
+              })}
+            </ul>
+          </div>
       </div>
-        Цвет волос
-        <div>
-          <ul>
-            {colors.map((color) => {
-              return (
-              <li>
-                {color.id}
-                <div style={{ backgroundColor: `${color.hex}` }}>-</div>
-              </li>
-              );
-            })}
-          </ul>
-        </div>
     </div>
   );
 };
